@@ -4,31 +4,11 @@ This project is a full-stack application using FastAPI for the backend, PostgreS
 
 ## Project Structure
 
-├── backend/ <- FASTAPI ->
-│ ├── app/
-│ │ ├── routes/
-│ │ ├── models.py
-│ │ ├── schemas.py
-│ │ ├── database.py
-│ │ └── redis_client.py
-│ ├── main.py
-│ ├── requirements.txt
-│ └── Dockerfile
-├── database/ <- Postgres ->
-│ ├── Dockerfile
-│ └── INIT.sql
-├── redis/ <- Redis ->
-│ ├── Dockerfile
-│ └── redis.conf
-├── frontend/ <- Astro / Typescript / Tailwind ->
-│ ├── src/
-│ ├── public/
-│ ├── astro.config.mjs
-│ ├── tailwind.config.cjs
-│ ├── package.json
-│ └── Dockerfile
-├── docker-compose.yml
-└── README.md
+database/ <- Postgres, init.sql script and Dockerfile
+redis/ <- Redis config and Dockerfile
+backend/ <- FASTAPI PROJECT connected with Postgres and Redis, single user functionality
+frontend/ <- Astro with Typescript and Tailwind
+docker-compose.yml <- General project configuration
 
 ## Versions
 
@@ -37,7 +17,7 @@ This project is a full-stack application using FastAPI for the backend, PostgreS
 - PostgreSQL: 14
 - Redis: 6.2
 - Node.js: 18
-- Astro: 2.3.0
+- Astro: 4.16.2
 
 ## Prerequisites
 
@@ -49,8 +29,8 @@ This project is a full-stack application using FastAPI for the backend, PostgreS
 1. Clone the repository:
 
    ```
-   git clone <repository-url>
-   cd <project-directory>
+   gh repo clone cmontedonico/fastapi-astro-redis-postgres
+   cd fastapi-astro-redis-postgres
    ```
 
 2. Build and start the containers:
@@ -62,7 +42,7 @@ This project is a full-stack application using FastAPI for the backend, PostgreS
 3. The services will be available at:
 
    - Backend API: http://localhost:8000
-   - Frontend: http://localhost:3000
+   - Frontend: http://localhost:4321
    - PostgreSQL: localhost:5432
    - Redis: localhost:6379
 
@@ -75,7 +55,7 @@ This project is a full-stack application using FastAPI for the backend, PostgreS
 
 ### Backend (FastAPI)
 
-- The backend code is in the `Backend/` directory.
+- The backend code is in the `backend/` directory.
 - You can edit the Python files locally, and the changes will be reflected immediately due to the volume mount and auto-reload feature of uvicorn.
 
 ### Frontend (Astro)
@@ -85,7 +65,7 @@ This project is a full-stack application using FastAPI for the backend, PostgreS
 
 ### Database
 
-- The initial database schema is defined in `database/INIT.sql`.
+- The initial database schema is defined in `database/init.sql`.
 - To make changes to the database schema, update this file and rebuild the containers.
 
 ### Redis
