@@ -4,11 +4,11 @@ This project is a full-stack application using FastAPI for the backend, PostgreS
 
 ## Project Structure
 
-database/ <- Postgres, init.sql script and Dockerfile
-redis/ <- Redis config and Dockerfile
-backend/ <- FASTAPI PROJECT connected with Postgres and Redis, single user functionality
-frontend/ <- Astro with Typescript and Tailwind
-docker-compose.yml <- General project configuration
+- database/ <- Postgres, init.sql script and Dockerfile
+- redis/ <- Redis config and Dockerfile
+- backend/ <- FASTAPI PROJECT connected with Postgres and Redis, single user functionality
+- frontend/ <- Astro with Typescript and Tailwind
+- docker-compose.yml <- General project configuration
 
 ## Versions
 
